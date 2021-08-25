@@ -17,8 +17,8 @@ public class TradeRecordSh {
     @Autowired
     private TradeRecodeService tradeRecodeService;
 
-    // 0点开始每3小时执行一次
-    @Scheduled(cron = "0 0 0/2 * * ? ")
+    // 0点开始
+    @Scheduled(cron = "0 0 0 1/1 * ? ")
     public void execute() {
         tradeRecodeService.createdSpotOrder();
     }
